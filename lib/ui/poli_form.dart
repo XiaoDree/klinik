@@ -1,75 +1,67 @@
-// Mengimport package 'flutter/material.dart' yang berisi komponen UI Flutter.
-// Package ini digunakan untuk membangun antarmuka pengguna (UI) dalam aplikasi Flutter.
+// Import library yang diperlukan
+import 'package:flutter/material.dart'; // Mengimpor package flutter/material.dart yang berisi komponen dan widget UI untuk membangun aplikasi Flutter.
+import '../model/poli.dart'; // Mengimpor file model/poli.dart yang berisi definisi kelas Poli.
+import '../ui/poli_detail.dart'; // Mengimpor file ui/poli_detail.dart yang berisi halaman PoliDetail.
 
-import 'package:flutter/material.dart';
-
-// Kelas PoliForm adalah StatefulWidget yang digunakan untuk menampilkan formulir poli.
-
+// Deklarasi kelas PoliForm
 class PoliForm extends StatefulWidget {
   const PoliForm({Key? key}) : super(key: key);
-// Konstruktor PoliForm.
-
-  @override
   _PoliFormState createState() => _PoliFormState();
-// Metode createState() digunakan untuk membuat instance dari _PoliFormState,
-// yaitu state yang akan digunakan oleh PoliForm.
 }
 
-// Kelas _PoliFormState adalah state dari PoliForm.
-
+// Deklarasi kelas _PoliFormState sebagai state dari PoliForm
 class _PoliFormState extends State<PoliForm> {
-  final _formKey = GlobalKey<FormState>();
-// GlobalKey<FormState> digunakan untuk mengakses objek FormState yang terkait dengan Form.
+  final _formKey = GlobalKey<
+      FormState>(); // Membuat GlobalKey untuk mengakses state dari Form.
+  final _namaPoliCtrl =
+      TextEditingController(); // Membuat TextEditingController untuk mengelola inputan teks pada TextField.
 
   @override
   Widget build(BuildContext context) {
-// Metode build() akan dijalankan ketika _PoliFormState dirender.
-
     return Scaffold(
-      // Scaffold adalah kelas yang menyediakan kerangka dasar untuk sebuah halaman dalam aplikasi Flutter.
-
-      appBar: AppBar(title: const Text("Tambah Poli")),
-      // Properti appBar digunakan untuk menampilkan AppBar di bagian atas halaman dengan judul "Tambah Poli".
-
+      appBar: AppBar(
+          title: const Text(
+              "Tambah Poli")), // Menampilkan judul halaman "Tambah Poli" pada AppBar.
       body: SingleChildScrollView(
-        // Widget SingleChildScrollView digunakan untuk mengatur tata letak dengan satu widget tunggal yang dapat digulirkan.
-
         child: Form(
-          // Widget Form digunakan untuk membuat formulir.
-
-          key: _formKey,
-          // Properti key digunakan untuk menghubungkan GlobalKey dengan Form untuk mengakses FormState.
-
+          key: _formKey, // Mengatur GlobalKey pada Form.
           child: Column(
-            // Widget Column digunakan untuk mengatur tata letak dalam bentuk kolom.
-
             children: [
-              TextField(
-                // Widget TextField digunakan untuk menerima input teks dari pengguna.
-
-                decoration: const InputDecoration(labelText: "Nama Poli"),
-                // Properti decoration digunakan untuk mengatur tampilan label TextField.
-              ),
-              SizedBox(height: 20),
-              // Widget SizedBox digunakan untuk membuat ruang kosong dengan tinggi tertentu di antara widget.
-
-              ElevatedButton(
-                // Widget ElevatedButton digunakan untuk membuat tombol dengan tampilan yang ditinggikan.
-
-                onPressed: () {},
-                // Properti onPressed digunakan untuk menentukan aksi yang akan dilakukan ketika tombol ditekan.
-                // Pada contoh ini, aksi belum ditentukan.
-
-                child: const Text("Simpan"),
-                // Properti child digunakan untuk menampilkan teks pada tombol.
-              )
+              _fieldNamaPoli(), // Menampilkan field untuk menginputkan nama poli.
+              SizedBox(height: 20), // Membuat jarak vertikal sebesar 20 piksel.
+              _tombolSimpan(), // Menampilkan tombol "Simpan".
             ],
           ),
         ),
       ),
     );
   }
-}
 
-// Kelas PoliForm ini digunakan untuk menampilkan formulir tambah poli.
-// Formulir tersebut berisi TextField untuk memasukkan nama poli dan tombol Simpan.
+  // Method untuk menampilkan field nama poli
+  _fieldNamaPoli() {
+    return TextField(
+      decoration: const InputDecoration(
+          labelText: "Nama Poli"), // Mengatur label teks untuk TextField.
+      controller:
+          _namaPoliCtrl, // Menghubungkan TextEditingController dengan TextField.
+    );
+  }
+
+  // Method untuk menampilkan tombol simpan
+  _tombolSimpan() {
+    return ElevatedButton(
+        onPressed: () {
+          Poli poli = new Poli(
+              namaPoli: _namaPoliCtrl
+                  .text); // Membuat objek Poli dengan nama poli yang diambil dari inputan teks.
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => PoliDetail(
+                      poli:
+                          poli))); // Menavigasi ke halaman PoliDetail dengan objek Poli yang baru dibuat.
+        },
+        child:
+            const Text("Simpan")); // Menampilkan teks "Simpan" di dalam tombol.
+  }
+}

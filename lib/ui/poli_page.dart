@@ -2,6 +2,7 @@
 // Package ini digunakan untuk membangun antarmuka pengguna (UI) dalam aplikasi Flutter.
 
 import 'package:flutter/material.dart';
+import 'package:klinik_app/widget/sidebar.dart';
 
 // Mengimport model Poli dari file 'poli.dart'.
 // Model Poli digunakan untuk mendapatkan informasi tentang poli.
@@ -44,6 +45,8 @@ class _PoliPageState extends State<PoliPage> {
 
     return Scaffold(
       // Scaffold adalah kelas yang menyediakan kerangka dasar untuk sebuah halaman dalam aplikasi Flutter.
+      drawer: Sidebar(),
+      // Drawer adalah widget yang digunakan untuk menampilkan menu Sidebar pada aplikasi.
 
       appBar: AppBar(
         title: const Text("Data Poli"),
