@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 // Mengimport model Poli dari file 'poli.dart'.
 // Model Poli digunakan untuk mendapatkan informasi tentang poli.
 
-import '../model/poli.dart';
+import '../../model/poli.dart';
 
 // Mengimport PoliDetail dari file 'poli_detail.dart'.
 // Halaman PoliDetail digunakan untuk menampilkan detail poli.

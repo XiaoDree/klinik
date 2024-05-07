@@ -1,5 +1,7 @@
 // Import package flutter/material.dart adalah package yang berisi berbagai komponen dan widget UI untuk membangun aplikasi Flutter.
 import 'package:flutter/material.dart';
+import 'package:klinik_app/ui/pasien/pasien_page.dart';
+import '../ui/pegawai/pegawai_page.dart';
 
 // Import beranda.dart adalah file yang berisi implementasi halaman Beranda.
 import '../ui/beranda.dart';
@@ -8,7 +10,7 @@ import '../ui/beranda.dart';
 import '../ui/login.dart';
 
 // Import poli_page.dart adalah file yang berisi implementasi halaman PoliPage.
-import '../ui/poli_page.dart';
+import '../ui/poli/poli_page.dart';
 
 // Kelas Sidebar merupakan StatelessWidget yang digunakan untuk membuat widget Sidebar.
 class Sidebar extends StatelessWidget {
@@ -51,12 +53,24 @@ class Sidebar extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.people),
             title: Text("Pegawai"),
-            onTap: () {},
+            onTap: () {
+              // Navigator.push digunakan untuk menjalankan perpindahan ke halaman PegawaiPage saat ListTile "Pegawai" ditekan.
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PegawaiPage()),
+              );
+            },
           ),
           ListTile(
             leading: Icon(Icons.account_box_sharp),
             title: Text("Pasien"),
-            onTap: () {},
+            onTap: () {
+              // Navigator.push digunakan untuk menjalankan perpindahan ke halaman PasienPage saat ListTile "Pasien" ditekan.
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PasienPage()),
+              );
+            },
           ),
           ListTile(
             leading: Icon(Icons.logout_rounded),

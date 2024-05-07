@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 // Mengimpor package flutter/material.dart yang berisi komponen dan widget UI untuk membangun aplikasi Flutter.
 
-import '../model/poli.dart';
+import '../../model/poli.dart';
 // Mengimpor file model/poli.dart yang berisi definisi kelas Poli.
 
-import '../ui/poli_detail.dart';
+import 'poli_detail.dart';
 // Mengimpor file ui/poli_detail.dart yang berisi halaman PoliDetail.
 
 class PoliUpdateForm extends StatefulWidget {

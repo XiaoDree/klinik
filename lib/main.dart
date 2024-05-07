@@ -7,7 +7,7 @@ import '/ui/beranda.dart';
 // Mengimport file 'poli_page.dart' yang berada dalam direktori '/ui'.
 // File ini digunakan untuk mengatur halaman utama aplikasi klinik.
 
-import '/ui/poli_page.dart';
+import '/ui/poli/poli_page.dart';
 
 // Fungsi main() adalah titik masuk utama aplikasi Flutter.
 // Di dalamnya, aplikasi MyApp dijalankan.
@@ -35,8 +35,8 @@ class MyApp extends StatelessWidget {
       // tampilan banner debug pada aplikasi. Nilainya diatur menjadi false
       // agar banner debug tidak ditampilkan.
 
-      home: PoliPage(),
-
+      // home: PoliPage(),
+      home: Beranda(),
       // Properti 'home' adalah halaman utama aplikasi yang akan ditampilkan
       // ketika aplikasi dijalankan. Dalam kasus ini, halaman utama adalah
       // kelas PoliPage() yang ditampilkan melalui widget home.
