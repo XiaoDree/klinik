@@ -1,7 +1,7 @@
 // Import package flutter/material.dart adalah package yang berisi berbagai komponen dan widget UI untuk membangun aplikasi Flutter.
 import 'package:flutter/material.dart';
-import 'package:klinik_app/ui/pasien/pasien_page.dart';
-import '../ui/pegawai/pegawai_page.dart';
+import '/ui/pasien/pasien_page.dart';
+import '/ui/pegawai/pegawai_page.dart';
 
 // Import beranda.dart adalah file yang berisi implementasi halaman Beranda.
 import '../ui/beranda.dart';

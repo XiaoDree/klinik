@@ -2,7 +2,10 @@
 // Package ini digunakan untuk membangun antarmuka pengguna (UI) dalam aplikasi Flutter.
 
 import 'package:flutter/material.dart';
-// import '../ui/poli_page.dart';
+import 'package:klinik_app/ui/home_page.dart';
+// import '../ui/home_page.dart;
+import '/GetData2.dart';
+import 'ui/login_view.dart';
 import '/ui/beranda.dart';
 // Mengimport file 'poli_page.dart' yang berada dalam direktori '/ui'.
 // File ini digunakan untuk mengatur halaman utama aplikasi klinik.
@@ -37,6 +40,7 @@ class MyApp extends StatelessWidget {
 
       // home: PoliPage(),
       home: Beranda(),
+      // home: HomePage(),
       // Properti 'home' adalah halaman utama aplikasi yang akan ditampilkan
       // ketika aplikasi dijalankan. Dalam kasus ini, halaman utama adalah
       // kelas PoliPage() yang ditampilkan melalui widget home.

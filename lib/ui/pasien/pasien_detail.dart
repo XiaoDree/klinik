@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart'; // Mengimpor package flutter/material.dart yang berisi komponen dan widget UI untuk membangun aplikasi Flutter.
-import 'package:klinik_app/model/pasien.dart'; // Mengimpor file pasien.dart yang berisi definisi kelas Pasien.
+import '/model/pasien.dart'; // Mengimpor file pasien.dart yang berisi definisi kelas Pasien.
 
 class PasienDetail extends StatefulWidget {
   final Pasien
